@@ -35,19 +35,19 @@
       <div class="form-group row mb-3">
         <label for="nilai_uts" class="col-4 col-form-label">Nilai UTS</label>
         <div class="col-8">
-          <input id="nilai_uts" name="nilai_uts" type="number" min="0" max="100" class="form-control" placeholder="Masukan angka..." required>
+          <input id="nilai_uts" name="nilai_uts" type="number" min="0" max="100" class="number-input form-control" placeholder="Masukan angka..." required>
         </div>
       </div>
       <div class="form-group row mb-3">
         <label for="nilai_uas" class="col-4 col-form-label">Nilai UAS</label>
         <div class="col-8">
-          <input id="nilai_uas" name="nilai_uas" type="number" min="0" max="100" class="form-control" placeholder="Masukan angka..." required>
+          <input id="nilai_uas" name="nilai_uas" type="number" min="0" max="100" class="number-input form-control" placeholder="Masukan angka..." required oninput="checkValue(this);">
         </div>
       </div>
       <div class="form-group row mb-3">
         <label for="nilai_tugas" class="col-4 col-form-label">Nilai Praktikum</label>
         <div class="col-8">
-          <input id="nilai_tugas" name="nilai_tugas" type="number" min="0" max="100" class="form-control" placeholder="Masukan angka..." required>
+          <input id="nilai_tugas" name="nilai_tugas" type="number" min="0" max="100" class="number-input form-control" placeholder="Masukan angka..." required>
         </div>
       </div>
       <div class="form-group row mb-3">
@@ -57,6 +57,27 @@
       </div>
     </div>
   </form>
+
+  <script>
+    // this function will convert a string to an integer
+    // beware this will throw an exception if the value does not parse properly
+
+
+    // this checks the value and updates it on the control, if needed
+    function checkValue(sender) {
+      const min = sender.getAttribute("min");
+      const max = sender.getAttribute("max");
+      console.log(max);
+
+      value = sender.value;
+
+
+      if(sender.value > max){
+        console.log("too much");
+        sender.value = max;
+      }
+    }
+  </script>
 
 </body>
 

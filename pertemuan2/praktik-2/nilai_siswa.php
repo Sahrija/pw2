@@ -14,14 +14,16 @@
 
 
   <div class="w-75 mt-5 mx-auto p-4 border shadow-sm">
-    <h1>Hasil Rekap Nilai Anda</h1>
+    <h2>Hasil Rekap Nilai Anda</h2>
     
     <hr>
 
     <?php
 
-    //Buat varable untuk menangkap dan menyimpan data yang dikirim
-    $nama_lengkap = $_POST["nama_lengkap"];
+    // create variable to get posted data
+
+    if(isset($_POST['proses'])){
+      $nama_lengkap = $_POST["nama_lengkap"];
     $mata_kuliah = $_POST["mata_kuliah"];
     $nilai_uts = $_POST["nilai_uts"];
     $nilai_uas = $_POST["nilai_uas"];
@@ -29,7 +31,7 @@
 
     $nilai_total = ($nilai_uts * 0.3) + ($nilai_uas * 0.35) + ($nilai_tugas * 0.35);
 
-    //tampilkan data dari variable
+    // shows data results
 
     echo  "<p>Nama :  $nama_lengkap </p>";
     echo  "<p>Mata Kuliah :  $mata_kuliah </p>";
@@ -39,8 +41,14 @@
     echo  "<hr/>";
     echo  "<p>Rata-rata :  $nilai_total </p>";
     echo  "<hr/>";
+
+    }
+    else{
+      echo "<p>Anda belum memasukan data nilai. Mohon masukkan data nilai anda <a href='form_nilai.php'>di sini</a>";
+    }
     ?>
   </div>
+
 
 </body>
 

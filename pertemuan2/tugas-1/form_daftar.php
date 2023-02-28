@@ -33,7 +33,7 @@
 				<label for="telepon">Telepon</label>
 				<input type="tel" class="form-control" name="telepon" id="telepon">
 			</div>
-			<button class="btn btn-primary">Submit</button>
+			<button name="proses" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
 </body>

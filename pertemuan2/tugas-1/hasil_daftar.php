@@ -22,12 +22,14 @@
 			</thead>
 			<tbody>
 				<tr>
+					<td>1</td>
 					<td>Fakhirul</td>
 					<td>fakhirul@gmail.com</td>
 					<td>Depok</td>
 					<td>+62878555169</td>
 				</tr>
 				<tr>
+					<td>2</td>
 					<td>Rul</td>
 					<td>rul@gmail.com</td>
 					<td>Bogor</td>
@@ -40,8 +42,24 @@
 						Berikan error handling
 				  */
 
-					// echo "<td>$_POST["nama"]</td>"
+				if (isset($_POST["proses"])) {
+					$nama = $_POST['nama'];
+					$email = $_POST['email'];
+					$alamat = $_POST['alamat'];
+					$telepon = $_POST['telepon'];
+
+
 				?>
+				
+					<tr>
+						<td><?php echo $nama; ?></td>
+						<td><?php echo $email; ?></td>
+						<td><?php echo $alamat; ?></td>
+						<td><?php echo $telepon; ?></td>
+					</tr>
+
+				<?php
+				} ?>
 
 			</tbody>
 		</table>
