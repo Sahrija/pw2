@@ -39,6 +39,8 @@
 				    Tangkap dan tampilkan data dari form_daftar.
 						Berikan error handling
 				  */
+
+					// echo "<td>$_POST["nama"]</td>"
 				?>
 
 			</tbody>
