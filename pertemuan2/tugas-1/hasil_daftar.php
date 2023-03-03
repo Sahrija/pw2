@@ -52,6 +52,7 @@
 				?>
 				
 					<tr>
+						<td>3</td>
 						<td><?php echo $nama; ?></td>
 						<td><?php echo $email; ?></td>
 						<td><?php echo $alamat; ?></td>
