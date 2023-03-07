@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style>
     input {
       width: fit-content;
@@ -44,36 +45,6 @@
   $pizza_orders_data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
-  function checkID(array $arr, $id)
-  {
-    foreach ($arr as $datarow) {
-      if ($datarow['id'] == $id) {
-        return true;
-      }
-    }
-  }
-  //add data
-  // unset($_POST['id']);
-
-
-  if (isset($_POST['id'])) {
-
-    $id = $_POST['id'];
-    $customer_name = $_POST['customer_name'];
-    $pizza = $_POST['pizza'];
-
-    if (!checkID($pizza_orders_data, $id)) {
-
-      $sql = "INSERT INTO `pizza_orders` (`id`, `customer_name`, `pizza`) VALUES ('$id', '$customer_name', '$pizza')";
-
-      mysqli_query($conn, $sql);
-    }
-    else{
-      
-      unset($_POST);
-      $warning = "data id is same";
-    }
-  }
 
 
   ?>
@@ -92,6 +63,7 @@
       <th>Id</th>
       <th>Customer name</th>
       <th>pizza</th>
+      <th>action</th>
     </thead>
 
     <tbody>
@@ -104,6 +76,7 @@
           <td><?php echo $datarow["id"] ?></td>
           <td><?php echo $datarow["customer_name"] ?></td>
           <td><?php echo $datarow["pizza"] ?></td>
+          <td><a href="pizza_upload.php?delete=<?php echo $datarow['id']; ?>" class="btn btn-danger">Delete</a></td>
         </tr>
 
       <?php
@@ -115,7 +88,7 @@
 
   </table>
 
-  <form action="pizza_order.php" method="post">
+  <form action="pizza_upload.php" method="post">
     <input type="number" name="id">
     <input type="text" name="customer_name">
     <input type="text" name="pizza">
