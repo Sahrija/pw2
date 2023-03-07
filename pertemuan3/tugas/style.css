@@ -1,0 +1,7 @@
+body{
+  --name: attr("data-current-page");
+}
+
+.navlink.active{
+  background-color: red;
+}
