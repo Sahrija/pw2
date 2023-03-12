@@ -2,11 +2,10 @@
 include_once("header.php");
 ?>
 
-<div class="container">
+<div class="m-5 table-container">
 	<h2>Data Mahasiswa</h2>
 	<table class="table">
 		<thead>
-			<tr>
 				<th>No</th>
 				<th>Nama Lengkap</th>
 				<th>Mata Kuliah</th>
@@ -17,7 +16,6 @@ include_once("header.php");
 				<th>Grade</th>
 				<th>Predikat</th>
 				<th>Keterangan</th>
-			</tr>
 		</thead>
 		<tbody>
 			<tr>
@@ -82,7 +80,7 @@ include_once("header.php");
 					<td><?= $nilai_uts ?></td>
 					<td><?= $nilai_uas ?></td>
 					<td><?= $nilai_tugas ?></td>
-					<td><?= $total_nilai ?></td>
+					<td><?= number_format($total_nilai, 2,".",",") ?></td>
 					<td><?= $grade ?></td>
 					<td><?= $predikat ?></td>
 					<td><?= $kelulusan ?></td>
@@ -94,3 +92,7 @@ include_once("header.php");
 		</tbody>
 	</table>
 </div>
+
+<?php
+include_once("footer.php");
+?>

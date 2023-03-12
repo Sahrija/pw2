@@ -9,8 +9,8 @@ include_once("header.php");
 
 ?>
 
-<div class="container my-5">
-	<h1 class="text-center mb-4">Form Nilai</h1>
+<div class="container m-5">
+	<h2 class="text-center mb-4">Form Nilai</h2>
 	<form action="data-nilai.php" method="post" class="form-horizontal w-75 mt-5 mx-auto p-4 border shadow-sm">
 		<div class="container px-3">
 			<div class="form-group row mb-3">
@@ -56,3 +56,7 @@ include_once("header.php");
 		</div>
 	</form>
 </div>
+
+<?php
+include_once("footer.php");
+?>
